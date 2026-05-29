@@ -1,0 +1,283 @@
+﻿<Window x:Class="Excepciones.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Excepciones"
+     xmlns:controles="clr-namespace:Excepciones.Controles"
+        mc:Ignorable="d"
+        Title="Excepciones" Height="450" Width="800">
+    <Window.Resources>
+
+        <!-- 🔵 BOTÓN PRIMARIO -->
+        <Style x:Key="BtnPrimario" TargetType="Button">
+            <Setter Property="Background" Value="#3B6CB7"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.85"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- ⚪ BOTÓN SECUNDARIO -->
+        <Style x:Key="BtnSecundario" TargetType="Button">
+            <Setter Property="Background" Value="#E5E7EB"/>
+            <Setter Property="Foreground" Value="#374151"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.85"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- 🔴 BOTÓN TEXTO (SALIR) -->
+        <Style x:Key="BtnTexto" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#EF4444"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.85" />
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="#FFF0F2F5">
+
+
+
+
+        <GroupBox Header="" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Margin="210,82,210,34" BorderBrush="#FFE3E3E3" BorderThickness="1,1,1,1">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Nombre Completo" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Bahnschrift SemiBold"/>
+
+                <!--txt Nombre-->
+                <Grid Grid.ColumnSpan="5" Grid.Row="1" Width="350" Height="35">
+
+                    <!-- Fondo -->
+                    <Border Background="#E5E7EB"
+     CornerRadius="15"/>
+
+                    <!-- TextBox -->
+                    <TextBox x:Name="txtNombre"
+      Background="Transparent"
+      BorderThickness="0"
+      FontSize="16"
+      Padding="15,0,0,0"
+      VerticalContentAlignment="Center"
+      Foreground="#374151"
+                             TextChanged="txtNombre_TextChanged"/>
+
+                    <!-- Placeholder -->
+                    <TextBlock x:Name="placeholder"
+        Text="Ejemplo:Gamalier Rees"
+        Foreground="#9CA3AF"
+        Margin="15,0,0,0"
+        VerticalAlignment="Center"
+        IsHitTestVisible="False"/>
+
+                </Grid>
+
+                <Label Content="Edad" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="0" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" FontFamily="Bahnschrift SemiBold"/>
+
+                <!--txtEdad-->
+                <Grid Grid.ColumnSpan="2" Grid.Row="3" Width="140" Height="35" HorizontalAlignment="Right" >
+
+                    <!-- Fondo -->
+                    <Border Background="#E5E7EB"
+CornerRadius="15"/>
+
+                    <!-- TextBox -->
+                    <TextBox x:Name="txtEdad"
+ Background="Transparent"
+ BorderThickness="0"
+ FontSize="16"
+ Padding="15,0,0,0"
+ VerticalContentAlignment="Center"
+ Foreground="#374151"
+                       TextChanged="txtEdad_TextChanged" />
+
+                    <!-- Placeholder -->
+                    <TextBlock x:Name="placeholder1"
+   Text="Ejemplo:21"
+   Foreground="#9CA3AF"
+   Margin="15,0,0,0"
+   VerticalAlignment="Center"
+   IsHitTestVisible="False"/>
+
+                </Grid>
+
+
+                <Label Content="Telefono" Grid.ColumnSpan="1" Grid.Row="2" Grid.Column="3" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" FontFamily="Bahnschrift SemiBold"/>
+
+                <!--TxtNumero-->
+
+                <Grid Grid.ColumnSpan="2" Grid.Row="3" Grid.Column="3" Width="140" Height="35" HorizontalAlignment="Left" >
+
+                    <!-- Fondo -->
+                    <Border Background="#E5E7EB"
+CornerRadius="15"/>
+
+
+                    <!-- TextBox -->
+                    <TextBox x:Name="txtTelefono"
+ Background="Transparent"
+ BorderThickness="0"
+ FontSize="16"
+ Padding="15,0,0,0"
+ VerticalContentAlignment="Center"
+ Foreground="#374151"
+                       TextChanged="txtTelefono_TextChanged" />
+
+                    <!-- Placeholder -->
+                    <TextBlock x:Name="placeholder2"
+   Text="Ejemplo:+1 809-321-1234"
+   Foreground="#9CA3AF"
+   Margin="15,0,0,0"
+   VerticalAlignment="Center"
+   IsHitTestVisible="False"
+                               FontSize="10"/>
+
+                </Grid>
+
+                <Label Content="Correo Electronico" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="0" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" FontFamily="Bahnschrift SemiBold"/>
+
+
+                <!--Correo-->
+                <Grid Grid.ColumnSpan="5" Grid.Row="5"  Width="350" Height="35" HorizontalAlignment="Center" >
+
+                    <!-- Fondo -->
+                    <Border Background="#E5E7EB"
+CornerRadius="15"/>
+
+                    <!-- TextBox -->
+                    <TextBox x:Name="txtCorreo"
+ Background="Transparent"
+ BorderThickness="0"
+ FontSize="16"
+ Padding="15,0,0,0"
+ VerticalContentAlignment="Center"
+ Foreground="#374151"
+                       TextChanged="txtCorreo_TextChanged" />
+
+                    <!-- Placeholder -->
+                    <TextBlock x:Name="placeholder3"
+   Text="Ejemplo:loquesea@gmail.com"
+   Foreground="#9CA3AF"
+   Margin="15,0,0,0"
+   VerticalAlignment="Center"
+   IsHitTestVisible="False"
+                               FontSize="10"/>
+
+                </Grid>
+
+
+
+                <!-- Guardar -->
+                <Button Name="btnGuardar" Style="{StaticResource BtnPrimario}" Width="130" Height="30" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Click="btnGuardar_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="💾" Margin="0,0,10,0"/>
+                        <TextBlock Text="Guardar"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Limpiar -->
+                <Button Name="btnLimpiar" Style="{StaticResource BtnSecundario}" Width="130" Height="30" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="7" Click="btnLimpiar_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="↻" Margin="0,0,10,0"/>
+                        <TextBlock Text="Limpiar"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Salir -->
+                <Button Name="btnSalir" Style="{StaticResource BtnTexto}" Width="60" Height="30" Grid.Column="5" Grid.Row="7" Click="btnSalir_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="↪" Margin="0,0,5,0"/>
+                        <TextBlock Text="Salir"/>
+                    </StackPanel>
+                </Button>
+
+
+
+
+            </Grid>
+
+
+
+        </GroupBox>
+
+
+
+        <Label Content="Registro de Estudiante" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontFamily="Microsoft New Tai Lue"/>
+
+
+    </Grid>
+</Window>

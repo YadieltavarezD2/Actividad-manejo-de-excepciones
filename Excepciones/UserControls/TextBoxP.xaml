@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Excepciones.Controles.TextBoxP"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Excepciones.Controles"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="250">
+    <Grid>
+        <TextBox Name="txtP" BorderThickness="0" HorizontalContentAlignment="Left"
+                 VerticalContentAlignment="Center" FontWeight="Light"
+                 TextChanged="txtP_TextChanged"/>
+        
+        <TextBlock Name="tbPlaceHolder" Text="{Binding Placeholder}" HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" FontSize="16" FontWeight="Light"
+                   Foreground="DarkGray" Margin="5"/>
+    </Grid>
+</UserControl>
